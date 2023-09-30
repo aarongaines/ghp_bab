@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "map.html",
+    "href": "map.html",
+    "title": "Last 5 Days of Possible L.Polyedra Blooms in SoCal Bight",
+    "section": "",
+    "text": "To test implamentation of ipyleaflet.\n\n\nCode\nfrom pathlib import Path\nimport json\nfrom ipyleaflet import Map, GeoJSON, LayersControl\nfrom ipywidgets import IntSlider, interact, Layout\nfrom IPython.display import display\n\npoly_path = Path('.')\npoly_files = list(poly_path.glob('data/poly_sb*.geojson'))\n\ndata_list = []\n\nfor file in poly_files:\n    with open(file) as f:\n        data = json.load(f)\n        data_list.append(data)\n\n\ndef random_color(feature):\n    return {\n        'color': 'gray',\n        'fillColor': '#01eeff',\n    }\n\n\nlayout = Layout(width='100%', height='700px')\n\nm = Map(center=(34, -119), zoom=8, layout=layout, scroll_wheel_zoom=True)\n\ncontrol = LayersControl(position='topright')\nm.add_control(control)\n\nfor poly in data_list:\n\n    print(poly['name'])\n    name = poly['name']\n\n    geo_json = GeoJSON(\n        name=name,\n        data=poly,\n        style={\n            'opacity': .7, 'dashArray': '0', 'fillOpacity': 0.5, 'weight': 1\n        },\n        hover_style={\n            'color': 'white', 'dashArray': '0', 'fillOpacity': 0.4\n        },\n        style_callback=random_color)\n    \n    m.add_layer(geo_json)\n\ndisplay(m)\n\n\npoly_sb_target_20200604_20200608\npoly_sb_target_20200609_20200613\npoly_sb_target_20200614_20200618\npoly_sb_target_20200619_20200623\npoly_sb_target_20200624_20200628"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bioluminescent Algal Blooms in the Southern California Bight",
+    "section": "",
+    "text": "This is a site page for my personal project on bioluminescent algal blooms off of the coast of SoCal, more specifically the Southern California Bight."
+  }
+]
