@@ -1,0 +1,22 @@
+---
+title: "Methods"
+---
+
+## Detection
+
+### Data
+1. JAXA GCOM-C SGLI Satellite
+    - Level 2 normalized water leaving radiance, NWLR, 380nm and 443nm bands
+    - Level 2 chlorophyll-a concentration, IWPR(CHLA)
+
+## Forecasting
+Work-in-progress
+
+### Data
+1. Target Data
+    - Daily/period of bloom detections
+2. Predictors
+    - Sea Surface Temperature
+    - Air Temperature
+    - Cummulative Precipitation
+    - more...

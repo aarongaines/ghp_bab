@@ -1,0 +1,67 @@
+---
+title: "Last 5 Days of Possible L.Polyedra Blooms in SoCal Bight"
+format:
+    html:
+        code-fold: true
+jupyter: python3
+---
+
+Below is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described [here](methods.qmd)
+
+In the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections
+
+This map is updated daily (in progress) with new data to provide the most recent 5 days of data that is avaliable. 
+
+```{python}
+from pathlib import Path
+import json
+from ipyleaflet import Map, GeoJSON, LayersControl
+from ipywidgets import IntSlider, interact, Layout
+from IPython.display import display
+
+poly_path = Path('.')
+poly_files = list(poly_path.glob('**/targetClip_*.geojson'))
+
+data_list = []
+
+for file in poly_files:
+    with open(file) as f:
+        data = json.load(f)
+        data_list.append(data)
+
+
+def random_color(feature):
+    return {
+        'color': 'gray',
+        'fillColor': '#01eeff',
+    }
+
+
+layout = Layout(width='100%')
+
+m = Map(center=(34, -119), zoom=8, layout=layout, scroll_wheel_zoom=True)
+
+
+
+for poly in data_list:
+
+    name = poly['name']
+
+    geo_json = GeoJSON(
+        name=name,
+        data=poly,
+        style={
+            'opacity': .7, 'dashArray': '0', 'fillOpacity': 0.5, 'weight': 1
+        },
+        hover_style={
+            'color': 'white', 'dashArray': '0', 'fillOpacity': 0.4
+        },
+        style_callback=random_color)
+    
+    m.add_layer(geo_json)
+
+control = LayersControl(position='topright')
+m.add_control(control)
+
+display(m)
+```
