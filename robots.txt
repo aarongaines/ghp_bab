@@ -1,1 +1,1 @@
-Sitemap: https://aarongaines.github.io/ghp_bab/sitemap.xml
+Sitemap: https://github.com/aarongaines/ghp_bab/sitemap.xml
