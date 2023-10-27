@@ -11,7 +11,14 @@
     "href": "methods.html",
     "title": "Methods",
     "section": "",
-    "text": "This page is a work-in-progress. ## Detection"
+    "text": "This page is a work-in-progress."
+  },
+  {
+    "objectID": "methods.html#detection",
+    "href": "methods.html#detection",
+    "title": "Methods",
+    "section": "Detection",
+    "text": "Detection\n\nData\n\nJAXA GCOM-C SGLI Satellite\n\nLevel 2 normalized water leaving radiance, NWLR, 380nm and 443nm bands\nLevel 2 chlorophyll-a concentration, IWPR(CHLA)"
   },
   {
     "objectID": "methods.html#forecasting",
