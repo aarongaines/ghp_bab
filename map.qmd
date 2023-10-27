@@ -1,8 +1,7 @@
 ---
 title: "Last 5 Days of Possible L.Polyedra Blooms in SoCal Bight"
-format:
-    html:
-        code-fold: true
+execute: 
+  echo: false
 jupyter: python3
 ---
 
@@ -29,21 +28,15 @@ for file in poly_files:
         data = json.load(f)
         data_list.append(data)
 
-
-def random_color(feature):
-    return {
-        'color': 'gray',
-        'fillColor': '#01eeff',
-    }
-
-
 layout = Layout(width='100%')
 
 m = Map(center=(34, -119), zoom=8, layout=layout, scroll_wheel_zoom=True)
 
+fill_colors = ['#008080', '#009f9f', '#00bfbf', '#00dfdf', '#00ffff',]
 
+for i, poly in enumerate(data_list):
 
-for poly in data_list:
+    fill = fill_colors[i]
 
     name = poly['name']
 
@@ -51,12 +44,11 @@ for poly in data_list:
         name=name,
         data=poly,
         style={
-            'opacity': .7, 'dashArray': '0', 'fillOpacity': 0.5, 'weight': 1
+            'fillColor' : fill, 'color': 'gray', 'opacity': .7, 'dashArray': '0', 'fillOpacity': 0.5, 'weight': 1
         },
         hover_style={
             'color': 'white', 'dashArray': '0', 'fillOpacity': 0.4
-        },
-        style_callback=random_color)
+        },)
     
     m.add_layer(geo_json)
 

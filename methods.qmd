@@ -1,5 +1,6 @@
 ---
 title: "Methods"
+
 ---
 This page is a work-in-progress.
 
@@ -9,6 +10,15 @@ This page is a work-in-progress.
 1. JAXA GCOM-C SGLI Satellite
     - Level 2 normalized water leaving radiance, NWLR, 380nm and 443nm bands
     - Level 2 chlorophyll-a concentration, IWPR(CHLA)
+
+### Methods
+
+The algea bloom detection algorithm is based on the work of [Kahru et al. 2021](https://doi.org/10.1525/elementa.2020.00157) and implemented in Python using a combination of the rasterio and GDAL packages. With data from the JAXA GCOM-C SGLI satellite, the algorithm identifies algea blooms by comparing the remote sensing reflectance ($R_{rs}$) of the 380nm (UV) and 443nm (blue) bands, and the chlorophyll-a concentration ($Chla$) of the ocean surface. The algorithm identifies a bloom by the expression below:
+$$\left( \frac{R_{rs}380nm}{R_{rs}443nm} \lt 1 \right){~and~} \left( {~Chla~} \gt 2mg/l \right)$$
+
+This method relies on the fact that the L. polyedra algea produces a mycrosporine-like amino acid (MAA) that absorbs UV light, while also producing chlorophyll-a. The MAA absorbs UV light, which reduces the $R_{rs}$ of the 380nm band, while the chlorophyll-a increases the $R_{rs}$ of the 443nm band. This results in a ratio, $\frac{R_{rs}380nm}{R_{rs}443nm}$, of less than 1 being useful for indicating L. polyedra algea blooms. We also know that L. polyedra blooms have a chlorophyll-a concentration greater than 1-2mg per liter, so we use a second threshold from a different dataset to help reduce false positives in the detection.
+
+There are some issues with this methodology however. While L. Polyedra is a producer of MAA's, it is not the only source of MAA's in the ocean even when it comes to other types of algea. Currently, this method is more an of dinoflaggelate blooms in general, L. Polyedra being the dominant species off of the Southern California coastline It is recommended that this method be used in conjunction with in-situ measurements to verify the presence of L. polyedra algea blooms, as the dominant species may change overtime. This method may be able to be improved in the future by using a more specific MAA absorption band specific to L. polyedra, but this would require more research, and other UV bands at useful resolutions are not currently available from any satellite. This will change when the [NASA PACE](https://pace.gsfc.nasa.gov/) satellite is launched in early 2024. This satellite will have more UV bands avaliable which which may help to identify the MAA's produced by L. Polyedra.
 
 ## Forecasting
 
