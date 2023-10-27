@@ -20,7 +20,7 @@ from IPython.display import display
 
 poly_path = Path('.')
 poly_files = list(poly_path.glob('**/targetClip_*.geojson'))
-poly_files = poly_files.sort(reverse=True)
+poly_files.sort(reverse=True)
 
 data_list = []
 
