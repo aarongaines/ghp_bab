@@ -4,9 +4,9 @@ title: "Welcome to the Bioluminescent Algal Bloom Project!"
 
 This is a personal project of mine focusing on the detection and forecasting of bioluminescent algal blooms along the Southern California Bight coastline. Using satellite data from the Japan Aerospace Exploration Agency's (JAXA) [GCOM-C/SGLI](https://global.jaxa.jp/projects/sat/gcom_c/) satellite, the goal of this project is detect, and eventually forecast this natural phenomena using a generative adversarial network (GAN).
 
-On this site you can explore the methodology involved in detecting these blooms and a simple map where you can explore the resulting detections from the last 5 days which is automatically updated everyday(WIP).
+On this site you can explore the methodology involved in detecting these blooms and a simple map where you can explore the resulting detections from the last 5 days which is automatically updated everyday.
 
-Eventually there will be a page outlining the methodology involved in forecasting bioluminescent algal blooms with a GAN. A forecast will be generated daily and avaliable as a map layer for viewing.
+Eventually there will be a page outlining the methodology involved in forecasting bioluminescent algal blooms with a GAN. A forecast will be generated daily and avaliable as a map layer for viewing along with recent detections.
 
 Thank you for your interest in my project and I hope you enjoy exploring the rest of this site.
 

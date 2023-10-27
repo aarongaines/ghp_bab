@@ -10,7 +10,7 @@ Below is a map displaying the last 5 days of detected bioluminescent algal bloom
 
 In the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections
 
-This map is updated daily (in progress) with new data to provide the most recent 5 days of data that is avaliable. 
+This map is updated daily.
 
 ```{python}
 from pathlib import Path

@@ -2,6 +2,4 @@
 title: "About"
 ---
 
-About this site
-
-Line for testing cronjob again.
+This project site is currently a work-in-progress. More information will be added soon.
