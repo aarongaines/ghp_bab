@@ -14,9 +14,6 @@ website:
       - href: map.qmd
         text: Map
 
-execute: 
-  freeze: auto
-
 format:
   html:
     theme: cosmo
