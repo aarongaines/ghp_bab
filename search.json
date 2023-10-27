@@ -4,41 +4,34 @@
     "href": "map.html",
     "title": "Last 5 Days of Possible L.Polyedra Blooms in SoCal Bight",
     "section": "",
-    "text": "Below is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described here\nIn the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections\nThis map is updated daily (in progress) with new data to provide the most recent 5 days of data that is avaliable.\n\n\nCode\nfrom pathlib import Path\nimport json\nfrom ipyleaflet import Map, GeoJSON, LayersControl\nfrom ipywidgets import IntSlider, interact, Layout\nfrom IPython.display import display\n\npoly_path = Path('.')\npoly_files = list(poly_path.glob('**/targetClip_*.geojson'))\n\ndata_list = []\n\nfor file in poly_files:\n    with open(file) as f:\n        data = json.load(f)\n        data_list.append(data)\n\n\ndef random_color(feature):\n    return {\n        'color': 'gray',\n        'fillColor': '#01eeff',\n    }\n\n\nlayout = Layout(width='100%')\n\nm = Map(center=(34, -119), zoom=8, layout=layout, scroll_wheel_zoom=True)\n\n\n\nfor poly in data_list:\n\n    name = poly['name']\n\n    geo_json = GeoJSON(\n        name=name,\n        data=poly,\n        style={\n            'opacity': .7, 'dashArray': '0', 'fillOpacity': 0.5, 'weight': 1\n        },\n        hover_style={\n            'color': 'white', 'dashArray': '0', 'fillOpacity': 0.4\n        },\n        style_callback=random_color)\n    \n    m.add_layer(geo_json)\n\ncontrol = LayersControl(position='topright')\nm.add_control(control)\n\ndisplay(m)"
+    "text": "Below is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described here\nIn the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections\nThis map is updated daily.\n\n\nCode\nfrom pathlib import Path\nimport json\nfrom ipyleaflet import Map, GeoJSON, LayersControl\nfrom ipywidgets import IntSlider, interact, Layout\nfrom IPython.display import display\n\npoly_path = Path('.')\npoly_files = list(poly_path.glob('**/targetClip_*.geojson'))\n\ndata_list = []\n\nfor file in poly_files:\n    with open(file) as f:\n        data = json.load(f)\n        data_list.append(data)\n\n\ndef random_color(feature):\n    return {\n        'color': 'gray',\n        'fillColor': '#01eeff',\n    }\n\n\nlayout = Layout(width='100%')\n\nm = Map(center=(34, -119), zoom=8, layout=layout, scroll_wheel_zoom=True)\n\n\n\nfor poly in data_list:\n\n    name = poly['name']\n\n    geo_json = GeoJSON(\n        name=name,\n        data=poly,\n        style={\n            'opacity': .7, 'dashArray': '0', 'fillOpacity': 0.5, 'weight': 1\n        },\n        hover_style={\n            'color': 'white', 'dashArray': '0', 'fillOpacity': 0.4\n        },\n        style_callback=random_color)\n    \n    m.add_layer(geo_json)\n\ncontrol = LayersControl(position='topright')\nm.add_control(control)\n\ndisplay(m)"
   },
   {
     "objectID": "methods.html",
     "href": "methods.html",
     "title": "Methods",
     "section": "",
-    "text": "JAXA GCOM-C SGLI Satellite\n\nLevel 2 normalized water leaving radiance, NWLR, 380nm and 443nm bands\nLevel 2 chlorophyll-a concentration, IWPR(CHLA)"
-  },
-  {
-    "objectID": "methods.html#detection",
-    "href": "methods.html#detection",
-    "title": "Methods",
-    "section": "",
-    "text": "JAXA GCOM-C SGLI Satellite\n\nLevel 2 normalized water leaving radiance, NWLR, 380nm and 443nm bands\nLevel 2 chlorophyll-a concentration, IWPR(CHLA)"
+    "text": "This page is a work-in-progress. ## Detection"
   },
   {
     "objectID": "methods.html#forecasting",
     "href": "methods.html#forecasting",
     "title": "Methods",
     "section": "Forecasting",
-    "text": "Forecasting\nWork-in-progress\n\nData\n\nTarget Data\n\nDaily/period of bloom detections\n\nPredictors\n\nSea Surface Temperature\nAir Temperature\nCummulative Precipitation\nmore…"
+    "text": "Forecasting\n\nData\n\nTarget Data\n\nDaily/period of bloom detections\n\nPredictors\n\nSea Surface Temperature\nAir Temperature\nCummulative Precipitation\nmore…"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\nLine for testing cronjob again."
+    "text": "This project site is currently a work-in-progress. More information will be added soon."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome to the Bioluminescent Algal Bloom Project!",
     "section": "",
-    "text": "This is a personal project of mine focusing on the detection and forecasting of bioluminescent algal blooms along the Southern California Bight coastline. Using satellite data from the Japan Aerospace Exploration Agency’s (JAXA) GCOM-C/SGLI satellite, the goal of this project is detect, and eventually forecast this natural phenomena using a generative adversarial network (GAN).\nOn this site you can explore the methodology involved in detecting these blooms and a simple map where you can explore the resulting detections from the last 5 days which is automatically updated everyday(WIP).\nEventually there will be a page outlining the methodology involved in forecasting bioluminescent algal blooms with a GAN. A forecast will be generated daily and avaliable as a map layer for viewing.\nThank you for your interest in my project and I hope you enjoy exploring the rest of this site.\nRegards,\nAaron Gaines"
+    "text": "This is a personal project of mine focusing on the detection and forecasting of bioluminescent algal blooms along the Southern California Bight coastline. Using satellite data from the Japan Aerospace Exploration Agency’s (JAXA) GCOM-C/SGLI satellite, the goal of this project is detect, and eventually forecast this natural phenomena using a generative adversarial network (GAN).\nOn this site you can explore the methodology involved in detecting these blooms and a simple map where you can explore the resulting detections from the last 5 days which is automatically updated everyday.\nEventually there will be a page outlining the methodology involved in forecasting bioluminescent algal blooms with a GAN. A forecast will be generated daily and avaliable as a map layer for viewing along with recent detections.\nThank you for your interest in my project and I hope you enjoy exploring the rest of this site.\nRegards,\nAaron Gaines"
   }
 ]
