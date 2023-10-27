@@ -5,7 +5,7 @@ execute:
 jupyter: python3
 ---
 
-Below is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described [here](methods.qmd)
+Below is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described [here](methods.qmd).
 
 In the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections
 
@@ -20,6 +20,7 @@ from IPython.display import display
 
 poly_path = Path('.')
 poly_files = list(poly_path.glob('**/targetClip_*.geojson'))
+poly_files = poly_files.sort(reverse=True)
 
 data_list = []
 
@@ -32,7 +33,7 @@ layout = Layout(width='100%')
 
 m = Map(center=(34, -119), zoom=8, layout=layout, scroll_wheel_zoom=True)
 
-fill_colors = ['#008080', '#009f9f', '#00bfbf', '#00dfdf', '#00ffff',]
+fill_colors = ['#00ffff', '#00e5e5', '#00cccc', '#00b2b2', '#009999',]
 
 for i, poly in enumerate(data_list):
 
