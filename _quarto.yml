@@ -5,8 +5,6 @@ website:
   title: "L. Polyedra"
   navbar:
     left:
-      - href: https://aarongaines.github.io/
-        text: Home
       - about.qmd
     right:
       - href: methods.qmd
