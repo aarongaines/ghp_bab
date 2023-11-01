@@ -7,20 +7,6 @@
     "text": "Below is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described here.\nIn the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections\nThis map is updated daily."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This project site is currently a work-in-progress. More information will be added soon."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to the Bioluminescent Algal Bloom Project!",
-    "section": "",
-    "text": "This is a personal project focusing on the detection and forecasting of bioluminescent algal blooms along the Southern California Bight coastline. Using satellite data from the Japan Aerospace Exploration Agency’s (JAXA) GCOM-C/SGLI satellite, the goal of this project is detect, and eventually forecast this natural phenomena using a generative adversarial network (GAN).\nOn this site you can explore the methodology involved in detecting these blooms and a simple map where you can explore the resulting detections from the last 5 days which is automatically updated everyday.\nEventually there will be a page outlining the methodology involved in forecasting bioluminescent algal blooms with a GAN. A forecast will be generated daily and avaliable as a map layer for viewing along with recent detections.\nThank you for your interest in my project and I hope you enjoy exploring the rest of this site.\nRegards,\nAaron Gaines"
-  },
-  {
     "objectID": "methods.html",
     "href": "methods.html",
     "title": "Methods",
@@ -40,5 +26,19 @@
     "title": "Methods",
     "section": "Forecasting",
     "text": "Forecasting\n\nData\n\nTarget Data\n\nDaily/period of bloom detections\n\nPredictors\n\nSea Surface Temperature\nAir Temperature\nCummulative Precipitation\nmore…"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project site is currently a work-in-progress. More information will be added soon."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to the Bioluminescent Algal Bloom Project!",
+    "section": "",
+    "text": "This is a personal project focusing on the detection and forecasting of bioluminescent algal blooms along the Southern California Bight coastline. Using satellite data from the Japan Aerospace Exploration Agency’s (JAXA) GCOM-C/SGLI satellite, the goal of this project is detect, and eventually forecast this natural phenomena using a generative adversarial network (GAN).\nOn this site you can explore the methodology involved in detecting these blooms and a simple map where you can explore the resulting detections from the last 5 days which is automatically updated everyday.\nEventually there will be a page outlining the methodology involved in forecasting bioluminescent algal blooms with a GAN. A forecast will be generated daily and avaliable as a map layer for viewing along with recent detections.\nThank you for your interest in my project and I hope you enjoy exploring the rest of this site.\nRegards,\nAaron Gaines"
   }
 ]
