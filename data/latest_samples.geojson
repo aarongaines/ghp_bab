@@ -44,7 +44,7 @@
       "properties": {
         "datasetID": "HABs-ScrippsPier",
         "time_UTC": "2023-10-30",
-        "Lingulodinium_polyedra_cells/L": NaN,
+        "Lingulodinium_polyedra_cells/L": "NaN",
         "L.Polyedra_dominant": false,
         "total_dinoflagellates_cells/L": 0.0,
         "total_diatoms_cells/L": 0.0,
