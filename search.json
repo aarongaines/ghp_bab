@@ -4,7 +4,7 @@
     "href": "map.html",
     "title": "Last 5 Days of Possible L.Polyedra Blooms in SoCal Bight",
     "section": "",
-    "text": "Below is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described here.\nIn the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections\nThis map is updated daily.\n\n\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/jupyter_client/session.py:721: UserWarning: Message serialization failed with:\nOut of range float values are not JSON compliant\nSupporting this message is deprecated in jupyter-client 7, please make sure your message is JSON-compliant\n  content = self.pack(content)"
+    "text": "Below is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described here.\nIn the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections\nThis map is updated daily."
   },
   {
     "objectID": "about.html",
