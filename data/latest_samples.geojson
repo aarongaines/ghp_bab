@@ -1,0 +1,81 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "datasetID": "HABs-NewportBeachPier",
+        "time_UTC": "2023-10-16",
+        "Lingulodinium_polyedra_cells/L": 0.0,
+        "L.Polyedra_dominant": false,
+        "total_dinoflagellates_cells/L": 12994.0,
+        "total_diatoms_cells/L": 2599.0,
+        "dominant_algae_type": "Dinoflagellate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.93109893798828,
+          33.60609817504883
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "datasetID": "HABs-SantaMonicaPier",
+        "time_UTC": "2023-11-06",
+        "Lingulodinium_polyedra_cells/L": 4488.0,
+        "L.Polyedra_dominant": true,
+        "total_dinoflagellates_cells/L": 8228.0,
+        "total_diatoms_cells/L": 748.0,
+        "dominant_algae_type": "Dinoflagellate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.4990005493164,
+          34.007999420166016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "datasetID": "HABs-ScrippsPier",
+        "time_UTC": "2023-10-30",
+        "Lingulodinium_polyedra_cells/L": NaN,
+        "L.Polyedra_dominant": false,
+        "total_dinoflagellates_cells/L": 0.0,
+        "total_diatoms_cells/L": 0.0,
+        "dominant_algae_type": "Equal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.25700378417969,
+          32.867000579833984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "datasetID": "HABs-StearnsWharf",
+        "time_UTC": "2023-11-01",
+        "Lingulodinium_polyedra_cells/L": 580.0,
+        "L.Polyedra_dominant": false,
+        "total_dinoflagellates_cells/L": 3910.0,
+        "total_diatoms_cells/L": 7530.0,
+        "dominant_algae_type": "Diatom"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.68485260009766,
+          34.408042907714844
+        ]
+      }
+    }
+  ]
+}

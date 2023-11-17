@@ -14,20 +14,25 @@ This map is updated daily.
 ```{python}
 from pathlib import Path
 import json
-from ipyleaflet import Map, GeoJSON, LayersControl
-from ipywidgets import IntSlider, interact, Layout
+from ipyleaflet import Map, GeoJSON, LayersControl, WidgetControl
+from ipywidgets import Layout, HTML
 from IPython.display import display
 
-poly_path = Path('.')
-poly_files = list(poly_path.glob('**/targetClip_*.geojson'))
+path = Path('.')
+poly_files = list(path.glob('**/targetClip_*.geojson'))
 poly_files.sort(reverse=True)
 
-data_list = []
+poly_list = []
 
 for file in poly_files:
     with open(file) as f:
-        data = json.load(f)
-        data_list.append(data)
+        poly_data = json.load(f)
+        poly_list.append(poly_data)
+
+point_files = list(path.glob('**/latest_samples.geojson'))
+
+with open(point_files[0]) as f:
+    point_data = json.load(f)
 
 layout = Layout(width='100%')
 
@@ -35,7 +40,7 @@ m = Map(center=(34, -119), zoom=8, layout=layout, scroll_wheel_zoom=True)
 
 fill_colors = ['#00ffff', '#00e5e5', '#00cccc', '#00b2b2', '#009999',]
 
-for i, poly in enumerate(data_list):
+for i, poly in enumerate(poly_list):
 
     fill = fill_colors[i]
 
@@ -53,8 +58,38 @@ for i, poly in enumerate(data_list):
     
     m.add_layer(geo_json)
 
+geo_json_smpl = GeoJSON(
+    name='Latest Samples',
+    data=point_data,
+    point_style={
+        'color': 'red', 'radius': 5,'opacity': 0, 'fillOpacity': 0.8,'weight': 0.5
+    },
+    hover_style={
+        'color': 'white', 'dashArray': '0', 'fillOpacity': 0.6
+    },)
+
+m.add_layer(geo_json_smpl)
+
+html = HTML("""Hover over a sample point""")
+html.layout.margin = "0px 20px 20px 20px"
+control = WidgetControl(widget=html, position="topleft")
+m.add(control)
+
+def update_html(feature, **kwargs):
+    html.value = f"""
+    <h3>{feature["properties"]["datasetID"]}</h3>
+    <p><b>Time:</b> {feature["properties"]["time_UTC"]}</p>
+    <p><b>Lingulodinium polyedra:</b> {feature["properties"]["Lingulodinium_polyedra_cells/L"]}</p>
+    <p><b>L. polyedra dominant:</b> {feature["properties"]["L.Polyedra_dominant"]}</p>
+    <p><b>Total dinoflagellates:</b> {feature["properties"]["total_dinoflagellates_cells/L"]}</p>
+    <p><b>Total diatoms:</b> {feature["properties"]["total_diatoms_cells/L"]}</p>
+    <p><b>Dominant algae:</b> {feature["properties"]["dominant_algae_type"]}</p>
+    """
+
 control = LayersControl(position='topright')
 m.add_control(control)
+
+geo_json_smpl.on_hover(update_html)
 
 display(m)
 ```
