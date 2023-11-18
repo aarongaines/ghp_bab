@@ -4,14 +4,7 @@
     "href": "map.html",
     "title": "Last 5 Days of Possible L.Polyedra Blooms in SoCal Bight",
     "section": "",
-    "text": "Below is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described here.\nIn the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections\nThis map is updated daily."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This project site is currently a work-in-progress. More information will be added soon."
+    "text": "Below is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described here.\nIn the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections\nThis map is updated daily.\nlink to ipynb version of this page: here"
   },
   {
     "objectID": "index.html",
@@ -40,5 +33,12 @@
     "title": "Methods",
     "section": "Forecasting",
     "text": "Forecasting\n\nData\n\nTarget Data\n\nDaily/period of bloom detections\n\nPredictors\n\nSea Surface Temperature\nAir Temperature\nCummulative Precipitation\nmore…"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project site is currently a work-in-progress. More information will be added soon."
   }
 ]
