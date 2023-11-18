@@ -11,6 +11,8 @@ In the top right of the map there is a widget to control the displayed layers. E
 
 This map is updated daily.
 
+link to ipynb version of this page: [here](map.ipynb)
+
 ```{python}
 from pathlib import Path
 import json
