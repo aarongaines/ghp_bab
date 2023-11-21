@@ -1,17 +1,20 @@
 ---
-title: "Last 5 Days of Possible L.Polyedra Blooms in SoCal Bight"
+title: "Last 5 Days of L.Polyedra Detections in the SoCal Bight"
 execute: 
   echo: false
 jupyter: python3
 ---
+Below is a plot showing the cells per liter of L. Polyedra from the last 8 weeks of in-situ samples taken in the Southern California Bight. The samples are taken by the Southern California Coastal Ocean Observing System (SCCOOS) and the data is available [here](https://erddap.sccoos.org/erddap/tabledap/index.html). The samples are taken at 4 locations: Scripps Pier, Newport Beach Pier, Santa Monica Pier and Stearns Wharf. These samples are taken at most once per week.
 
-Below is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described [here](methods.qmd).
+![L. Polyedra Cells/L](lpolyedra.png)
+
+
+Below is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California as well as the HABMAP points where in-situ samples are taken. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described [here](methods.qmd).
 
 In the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections
 
 This map is updated daily.
 
-Here is a link to the ObservableJS version of this map [here](map_ojs.qmd)
 
 ```{python}
 from pathlib import Path
@@ -20,6 +23,7 @@ from ipyleaflet import Map, GeoJSON, LayersControl, WidgetControl
 from ipywidgets import Layout, HTML
 from IPython.display import display
 
+#path = Path('E:\personal\gh_pages_sites\ghp_bab')
 path = Path('.')
 poly_files = list(path.glob('**/targetClip_*.geojson'))
 poly_files.sort(reverse=True)
@@ -36,11 +40,16 @@ point_files = list(path.glob('**/latest_samples.geojson'))
 with open(point_files[0]) as f:
     point_data = json.load(f)
 
-layout = Layout(width='100%')
+layout = Layout(height='600px' ,width='100%')
 
 m = Map(center=(34, -119), zoom=8, layout=layout, scroll_wheel_zoom=True)
 
 fill_colors = ['#00ffff', '#00e5e5', '#00cccc', '#00b2b2', '#009999',]
+
+site_colors = {"HABs-NewportBeachPier": "#e41a1c",
+               "HABs-SantaMonicaPier": "#377eb8",
+               "HABs-ScrippsPier": "#4daf4a",
+               "HABs-StearnsWharf": "#984ea3"}
 
 for i, poly in enumerate(poly_list):
 
@@ -60,38 +69,26 @@ for i, poly in enumerate(poly_list):
     
     m.add_layer(geo_json)
 
+def point_style(feature):
+
+    color = site_colors[feature['properties']['datasetID']]
+
+    return {
+        'color': color, 'radius': 5,'opacity': 0, 'fillOpacity': 0.8,'weight': 0.5
+    }
+
 geo_json_smpl = GeoJSON(
-    name='Latest Samples',
+    name='In Situ Sample Locations',
     data=point_data,
     point_style={
-        'color': 'red', 'radius': 5,'opacity': 0, 'fillOpacity': 0.8,'weight': 0.5
+        'radius': 5,'opacity': 0, 'fillOpacity': 0.8,'weight': 0.5
     },
-    hover_style={
-        'color': 'white', 'dashArray': '0', 'fillOpacity': 0.6
-    },)
+    style_callback=point_style)
 
 m.add_layer(geo_json_smpl)
 
-html = HTML("""Hover over a sample point""")
-html.layout.margin = "0px 20px 20px 20px"
-control = WidgetControl(widget=html, position="topleft")
-m.add(control)
-
-def update_html(feature, **kwargs):
-    html.value = f"""
-    <h3>{feature["properties"]["datasetID"]}</h3>
-    <p><b>Time:</b> {feature["properties"]["time_UTC"]}</p>
-    <p><b>Lingulodinium polyedra:</b> {feature["properties"]["Lingulodinium_polyedra_cells/L"]}</p>
-    <p><b>L. polyedra dominant:</b> {feature["properties"]["L.Polyedra_dominant"]}</p>
-    <p><b>Total dinoflagellates:</b> {feature["properties"]["total_dinoflagellates_cells/L"]}</p>
-    <p><b>Total diatoms:</b> {feature["properties"]["total_diatoms_cells/L"]}</p>
-    <p><b>Dominant algae:</b> {feature["properties"]["dominant_algae_type"]}</p>
-    """
-
 control = LayersControl(position='topright')
 m.add_control(control)
-
-geo_json_smpl.on_hover(update_html)
 
 display(m)
 ```

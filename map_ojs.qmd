@@ -15,7 +15,8 @@ map = {
     attribution: "&copy; <a href=https://www.openstreetmap.org/copyright>OpenStreetMap</a> contributors"
   }).addTo(map);
   const fillColors = ['#00ffff', '#00e5e5', '#00cccc', '#00b2b2', '#009999'];
-  const polyData = await d3.json('./data/targetClip_20231116.geojson');
+  const response = await fetch('./data/targetClip_20231116.geojson');
+  const polyData = await response.json();
   polyData.features.forEach((poly, i) => {
     L.geoJSON(poly, {
       style: {
