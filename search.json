@@ -4,7 +4,7 @@
     "href": "map_ojs.html",
     "title": "OJS Leaflet test",
     "section": "",
-    "text": "lorem ipsum\n\nmap = {\n  const container = html`&lt;div style=\"height:600px;\"&gt;`;\n  yield container;\n  const map = L.map(container).setView([34, -119], 8);\n  L.tileLayer(\"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\", {\n    attribution: \"&copy; &lt;a href=https://www.openstreetmap.org/copyright&gt;OpenStreetMap&lt;/a&gt; contributors\"\n  }).addTo(map);\n  const fillColors = ['#00ffff', '#00e5e5', '#00cccc', '#00b2b2', '#009999'];\n  const polyData = await d3.json('./data/targetClip_20231116.geojson');\n  polyData.features.forEach((poly, i) =&gt; {\n    L.geoJSON(poly, {\n      style: {\n        fillColor: fillColors[i],\n        color: 'gray',\n        opacity: 0.7,\n        dashArray: '0',\n        fillOpacity: 0.5,\n        weight: 1\n      }\n    }).addTo(map);\n  });\n}\n\nL = {\n  const L = await require(\"leaflet@1/dist/leaflet.js\");\n  if (!L._style) {\n    const href = await require.resolve(\"leaflet@1/dist/leaflet.css\");\n    document.head.appendChild(L._style = html`&lt;link href=${href} rel=stylesheet&gt;`);\n  }\n  return L;\n}"
+    "text": "lorem ipsum\n\nmap = {\n  const container = html`&lt;div style=\"height:600px;\"&gt;`;\n  yield container;\n  const map = L.map(container).setView([34, -119], 8);\n  L.tileLayer(\"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\", {\n    attribution: \"&copy; &lt;a href=https://www.openstreetmap.org/copyright&gt;OpenStreetMap&lt;/a&gt; contributors\"\n  }).addTo(map);\n  const fillColors = ['#00ffff', '#00e5e5', '#00cccc', '#00b2b2', '#009999'];\n  const response = await fetch('./data/targetClip_20231116.geojson');\n  const polyData = await response.json();\n  polyData.features.forEach((poly, i) =&gt; {\n    L.geoJSON(poly, {\n      style: {\n        fillColor: fillColors[i],\n        color: 'gray',\n        opacity: 0.7,\n        dashArray: '0',\n        fillOpacity: 0.5,\n        weight: 1\n      }\n    }).addTo(map);\n  });\n}\n\nL = {\n  const L = await require(\"leaflet@1/dist/leaflet.js\");\n  if (!L._style) {\n    const href = await require.resolve(\"leaflet@1/dist/leaflet.css\");\n    document.head.appendChild(L._style = html`&lt;link href=${href} rel=stylesheet&gt;`);\n  }\n  return L;\n}"
   },
   {
     "objectID": "about.html",
@@ -44,8 +44,8 @@
   {
     "objectID": "map.html",
     "href": "map.html",
-    "title": "Last 5 Days of Possible L.Polyedra Blooms in SoCal Bight",
+    "title": "Last 5 Days of L.Polyedra Detections in the SoCal Bight",
     "section": "",
-    "text": "Below is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described here.\nIn the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections\nThis map is updated daily.\nHere is a link to the ObservableJS version of this map here"
+    "text": "Below is a plot showing the cells per liter of L. Polyedra from the last 8 weeks of in-situ samples taken in the Southern California Bight. The samples are taken by the Southern California Coastal Ocean Observing System (SCCOOS) and the data is available here. The samples are taken at 4 locations: Scripps Pier, Newport Beach Pier, Santa Monica Pier and Stearns Wharf. These samples are taken at most once per week.\n\n\n\nL. Polyedra Cells/L\n\n\nBelow is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California as well as the HABMAP points where in-situ samples are taken. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described here.\nIn the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections\nThis map is updated daily."
   }
 ]
