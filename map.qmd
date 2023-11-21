@@ -6,7 +6,7 @@ jupyter: python3
 ---
 Below is a plot showing the cells per liter of L. Polyedra from the last 8 weeks of in-situ samples taken in the Southern California Bight. The samples are taken by the Southern California Coastal Ocean Observing System (SCCOOS) and the data is available [here](https://erddap.sccoos.org/erddap/tabledap/index.html). The samples are taken at 4 locations: Scripps Pier, Newport Beach Pier, Santa Monica Pier and Stearns Wharf. These samples are taken at most once per week.
 
-![L. Polyedra Cells/L](lpolyedra.png)
+![](data/lpoly_recent.png)
 
 
 Below is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California as well as the HABMAP points where in-situ samples are taken. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described [here](methods.qmd).
