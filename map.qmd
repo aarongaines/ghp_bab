@@ -26,7 +26,7 @@ from IPython.display import display
 #path = Path('E:\personal\gh_pages_sites\ghp_bab')
 path = Path('.')
 poly_files = list(path.glob('**/targetClip_*.geojson'))
-poly_files.sort(reverse=True)
+poly_files.sort()
 
 poly_list = []
 
