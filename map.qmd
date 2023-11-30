@@ -44,7 +44,7 @@ layout = Layout(height='600px' ,width='100%')
 
 m = Map(center=(34, -119), zoom=8, layout=layout, scroll_wheel_zoom=True)
 
-fill_colors = ['#00ffff', '#00e5e5', '#00cccc', '#00b2b2', '#009999',]
+fill_colors = ['#009999', '#00b2b2', '#00cccc', '#00e5e5', '#00ffff',]
 
 site_colors = {"HABs-NewportBeachPier": "#e41a1c",
                "HABs-SantaMonicaPier": "#377eb8",
