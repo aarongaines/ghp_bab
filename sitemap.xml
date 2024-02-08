@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://aarongaines.github.io/ghp_bab/about.html</loc>
-    <lastmod>2024-02-07T03:07:04.060Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aarongaines.github.io/ghp_bab/map_ojs.html</loc>
-    <lastmod>2024-02-07T03:07:04.064Z</lastmod>
-  </url>
-  <url>
     <loc>https://aarongaines.github.io/ghp_bab/methods.html</loc>
-    <lastmod>2024-02-07T03:07:04.064Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aarongaines.github.io/ghp_bab/index.html</loc>
-    <lastmod>2024-02-07T03:07:04.064Z</lastmod>
+    <lastmod>2024-02-08T03:47:36.414Z</lastmod>
   </url>
   <url>
     <loc>https://aarongaines.github.io/ghp_bab/map.html</loc>
-    <lastmod>2024-02-07T03:07:04.064Z</lastmod>
+    <lastmod>2024-02-08T03:47:36.414Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aarongaines.github.io/ghp_bab/index.html</loc>
+    <lastmod>2024-02-08T03:47:36.414Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aarongaines.github.io/ghp_bab/about.html</loc>
+    <lastmod>2024-02-08T03:47:36.406Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aarongaines.github.io/ghp_bab/map_ojs.html</loc>
+    <lastmod>2024-02-08T03:47:36.414Z</lastmod>
   </url>
 </urlset>
