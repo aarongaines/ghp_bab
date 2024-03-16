@@ -1,17 +1,17 @@
 [
   {
-    "objectID": "map_ojs.html",
-    "href": "map_ojs.html",
-    "title": "OJS Leaflet test",
-    "section": "",
-    "text": "lorem ipsum\n\nmap = {\n  const container = html`&lt;div style=\"height:600px;\"&gt;`;\n  yield container;\n  const map = L.map(container).setView([34, -119], 8);\n  L.tileLayer(\"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\", {\n    attribution: \"&copy; &lt;a href=https://www.openstreetmap.org/copyright&gt;OpenStreetMap&lt;/a&gt; contributors\"\n  }).addTo(map);\n  const fillColors = ['#00ffff', '#00e5e5', '#00cccc', '#00b2b2', '#009999'];\n  const response = await fetch('./data/targetClip_20231116.geojson');\n  const polyData = await response.json();\n  polyData.features.forEach((poly, i) =&gt; {\n    L.geoJSON(poly, {\n      style: {\n        fillColor: fillColors[i],\n        color: 'gray',\n        opacity: 0.7,\n        dashArray: '0',\n        fillOpacity: 0.5,\n        weight: 1\n      }\n    }).addTo(map);\n  });\n}\n\nL = {\n  const L = await require(\"leaflet@1/dist/leaflet.js\");\n  if (!L._style) {\n    const href = await require.resolve(\"leaflet@1/dist/leaflet.css\");\n    document.head.appendChild(L._style = html`&lt;link href=${href} rel=stylesheet&gt;`);\n  }\n  return L;\n}"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome to the Bioluminescent Algal Bloom Project!",
     "section": "",
     "text": "This is a personal project focusing on the detection and forecasting of bioluminescent algal blooms along the Southern California Bight coastline. Using satellite data from the Japan Aerospace Exploration Agency’s (JAXA) GCOM-C/SGLI satellite, the goal of this project is detect, and eventually forecast this natural phenomena using a generative adversarial network (GAN).\nOn this site you can explore the methodology involved in detecting these blooms and a simple map where you can explore the resulting detections from the last 5 days which is automatically updated everyday.\nEventually there will be a page outlining the methodology involved in forecasting bioluminescent algal blooms with a GAN. A forecast will be generated daily and avaliable as a map layer for viewing along with recent detections.\nThank you for your interest in my project and I hope you enjoy exploring the rest of this site.\nRegards,\nAaron Gaines"
+  },
+  {
+    "objectID": "map.html",
+    "href": "map.html",
+    "title": "Last 5 Days of L.Polyedra Detections in the SoCal Bight",
+    "section": "",
+    "text": "Below is a plot showing the cells per liter of L. Polyedra from the last 8 weeks of in-situ samples taken in the Southern California Bight. The samples are taken by the Southern California Coastal Ocean Observing System (SCCOOS) and the data is available here. The samples are taken at 4 locations: Scripps Pier, Newport Beach Pier, Santa Monica Pier and Stearns Wharf. These samples are taken at most once per week and a delay between sampling and data availability is expected.\n\nBelow is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California as well as the HABMAP points where in-situ samples are taken. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described here.\nIn the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections\nThis map is updated daily."
   },
   {
     "objectID": "methods.html",
@@ -35,11 +35,11 @@
     "text": "Forecasting\n\nData\n\nTarget Data\n\nDaily/period of bloom detections\n\nPredictors\n\nSea Surface Temperature\nAir Temperature\nCummulative Precipitation\nmore…"
   },
   {
-    "objectID": "map.html",
-    "href": "map.html",
-    "title": "Last 5 Days of L.Polyedra Detections in the SoCal Bight",
+    "objectID": "map_ojs.html",
+    "href": "map_ojs.html",
+    "title": "OJS Leaflet test",
     "section": "",
-    "text": "Below is a plot showing the cells per liter of L. Polyedra from the last 8 weeks of in-situ samples taken in the Southern California Bight. The samples are taken by the Southern California Coastal Ocean Observing System (SCCOOS) and the data is available here. The samples are taken at 4 locations: Scripps Pier, Newport Beach Pier, Santa Monica Pier and Stearns Wharf. These samples are taken at most once per week and a delay between sampling and data availability is expected.\n\nBelow is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California as well as the HABMAP points where in-situ samples are taken. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described here.\nIn the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections\nThis map is updated daily."
+    "text": "lorem ipsum\n\nmap = {\n  const container = html`&lt;div style=\"height:600px;\"&gt;`;\n  yield container;\n  const map = L.map(container).setView([34, -119], 8);\n  L.tileLayer(\"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\", {\n    attribution: \"&copy; &lt;a href=https://www.openstreetmap.org/copyright&gt;OpenStreetMap&lt;/a&gt; contributors\"\n  }).addTo(map);\n  const fillColors = ['#00ffff', '#00e5e5', '#00cccc', '#00b2b2', '#009999'];\n  const response = await fetch('./data/targetClip_20231116.geojson');\n  const polyData = await response.json();\n  polyData.features.forEach((poly, i) =&gt; {\n    L.geoJSON(poly, {\n      style: {\n        fillColor: fillColors[i],\n        color: 'gray',\n        opacity: 0.7,\n        dashArray: '0',\n        fillOpacity: 0.5,\n        weight: 1\n      }\n    }).addTo(map);\n  });\n}\n\nL = {\n  const L = await require(\"leaflet@1/dist/leaflet.js\");\n  if (!L._style) {\n    const href = await require.resolve(\"leaflet@1/dist/leaflet.css\");\n    document.head.appendChild(L._style = html`&lt;link href=${href} rel=stylesheet&gt;`);\n  }\n  return L;\n}"
   },
   {
     "objectID": "about.html",
