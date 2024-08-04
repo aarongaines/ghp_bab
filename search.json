@@ -14,20 +14,6 @@
     "text": "This is a personal project focusing on the detection and forecasting of bioluminescent algal blooms along the Southern California Bight coastline. Using satellite data from the Japan Aerospace Exploration Agency’s (JAXA) GCOM-C/SGLI satellite, the goal of this project is detect, and eventually forecast this natural phenomena using a generative adversarial network (GAN).\nOn this site you can explore the methodology involved in detecting these blooms and a simple map where you can explore the resulting detections from the last 5 days which is automatically updated everyday.\nEventually there will be a page outlining the methodology involved in forecasting bioluminescent algal blooms with a GAN. A forecast will be generated daily and avaliable as a map layer for viewing along with recent detections.\nThank you for your interest in my project and I hope you enjoy exploring the rest of this site.\nRegards,\nAaron Gaines"
   },
   {
-    "objectID": "map.html",
-    "href": "map.html",
-    "title": "Last 5 Days of L.Polyedra Detections in the SoCal Bight",
-    "section": "",
-    "text": "Below is a plot showing the cells per liter of L. Polyedra from the last 8 weeks of in-situ samples taken in the Southern California Bight. The samples are taken by the Southern California Coastal Ocean Observing System (SCCOOS) and the data is available here. The samples are taken at 4 locations: Scripps Pier, Newport Beach Pier, Santa Monica Pier and Stearns Wharf. These samples are taken at most once per week and a delay between sampling and data availability is expected.\n\nBelow is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California as well as the HABMAP points where in-situ samples are taken. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described here.\nIn the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections\nThis map is updated daily."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This project site is currently a work-in-progress. More information will be added soon."
-  },
-  {
     "objectID": "methods.html",
     "href": "methods.html",
     "title": "Methods",
@@ -47,5 +33,19 @@
     "title": "Methods",
     "section": "Forecasting",
     "text": "Forecasting\n\nData\n\nTarget Data\n\nDaily/period of bloom detections\n\nPredictors\n\nSea Surface Temperature\nAir Temperature\nCummulative Precipitation\nmore…"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project site is currently a work-in-progress. More information will be added soon."
+  },
+  {
+    "objectID": "map.html",
+    "href": "map.html",
+    "title": "Last 5 Days of L.Polyedra Detections in the SoCal Bight",
+    "section": "",
+    "text": "Below is a plot showing the cells per liter of L. Polyedra from the last 8 weeks of in-situ samples taken in the Southern California Bight. The samples are taken by the Southern California Coastal Ocean Observing System (SCCOOS) and the data is available here. The samples are taken at 4 locations: Scripps Pier, Newport Beach Pier, Santa Monica Pier and Stearns Wharf. These samples are taken at most once per week and a delay between sampling and data availability is expected.\n\nBelow is a map displaying the last 5 days of detected bioluminescent algal blooms off of the coast of Southern California as well as the HABMAP points where in-situ samples are taken. These blooms are detected using data from the JAXA GCOM/SGLI satelite and the methodology described here.\nIn the top right of the map there is a widget to control the displayed layers. Each layer represents a single day of detections\nThis map is updated daily."
   }
 ]
